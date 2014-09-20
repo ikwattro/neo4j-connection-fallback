@@ -6,7 +6,7 @@ Simple application example to show how easy it is to configure a fallback connec
 
 ---
 
-## Create a configuration file at the root of your project, for e.g. `neoclient.yml` :
+#### Create a configuration file at the root of your project, for e.g. `neoclient.yml` :
 
 ```yaml
 connections:
@@ -29,15 +29,12 @@ fallback:
   defaultdb: backupdb
 ```
 
-## Setup your client and provide the configuration file :
+#### Setup your client and provide the configuration file :
 
 ```php
 // index.php file (simple example)
-$client = new Client();
-$client
+$client = new Client()
 	->loadConfigurationFile(__DIR__.'/neoclient.yml')
-	->createDefaultChromePHPLogger('browserlog')
-	->setLogger('neolog', $logger)
 	->build();
 ```
 
