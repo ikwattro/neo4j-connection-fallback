@@ -5,14 +5,14 @@ connections:
     port: 24789
     auth: true
     user: testdb
-    password: xmllel3HNE1cOVvHlupu
+    password: s3cr3t
   backupdb:
     scheme: http
     host: testdb2.sb02.stations.graphenedb.com
     port: 24789
     auth: true
     user: testdb2
-    password: ClOv6ld7wU59Zv7WCbZM
+    password: p@sswOrd
 
 fallback:
   defaultdb: backupdb
