@@ -8,6 +8,16 @@ $logger = new \Monolog\Logger("neoclient");
 $logger->pushHandler(new \Monolog\Handler\ErrorLogHandler());
 
 $client = new Client();
+/**
+* Specific for Heroku
+*/
+$db1_password = getenv('DEFAULTDB__PASSWORD');
+$db2_password = getenv('TESTDB2__PASSWORD');
+$client->getServiceContainer()->setParameter('defaultdb_password', $db1_password);
+$client->getServiceContainer()->setParameter('testdb2_password', $db2_password);
+/** End of heroku specific config
+*/
+
 $client
 	->loadConfigurationFile(__DIR__.'/neoclient.yml')
 	->createDefaultChromePHPLogger('browserlog')
