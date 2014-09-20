@@ -10,6 +10,7 @@ $logger->pushHandler(new \Monolog\Handler\ErrorLogHandler());
 $client = new Client();
 $client
 	->loadConfigurationFile(__DIR__.'/neoclient.yml')
+	->createDefaultChromePHPLogger('browserlog')
 	->setLogger('neolog', $logger)
 	->build();
 
